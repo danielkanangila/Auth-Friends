@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
 import axios from 'axios';
+import { StyledForm, Error } from './styled-components';
 
 const Login = (props) => {
     const [credentials, setCredentials] = useState({
@@ -43,53 +43,5 @@ const Login = (props) => {
         </StyledForm>
     )
 }
-
-const Error = styled.div`
-    background-color: #bf360c;
-    color: #fff;
-    padding: 15px;
-    margin-bottom: 20px;
-`
-
-const StyledForm = styled.form`
-    max-width: 450px;
-    margin: 65px auto;
-    display:  flex;
-    flex-direction: column;
-    padding: 45px 15px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.25);
-    h1 {
-        width: 100%;
-        padding: 20px 0;
-        text-align: center;
-    }
-    input {
-        width: 100%;
-        padding: 1rem;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 25px;
-        font-size: 15px;
-        transition: .3s;
-        &:focus {
-            box-shadow: 1px 1px 10px rgba(0,0,0,0.2);
-            border-color: transparent;
-        }
-    }
-    button {
-        width: 100%;
-        padding: 15px;
-        font-size: 0.9rem;
-        text-transform: uppercase;
-        background-color: #512da8;
-        color: #fff;
-        border-radius: 25px;
-        margin: 15px 0;
-        transition: .3s;
-        &:hover {
-            background-color: #311b92
-        }
-    }
-`
 
 export default Login;

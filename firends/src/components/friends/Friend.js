@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
-const Friend = ({name, age, email, id}) => {
+const Friend = ({name, age, email, id, onEdit, onDelete}) => {
     return(
         <Wrapper>
             <div className="avatar">
@@ -14,8 +14,8 @@ const Friend = ({name, age, email, id}) => {
                     <p>Age: {age}</p>
                 </div>
                 <div className="action">
-                    <button className="btn-primary edit">Edit</button>
-                    <button className="btn-danger">Delete</button>
+                    <button onClick={() => onEdit({name, age, email, id})} className="btn-primary edit">Edit</button>
+                    <button onClick={() =>  onDelete(id)} className="btn-danger">Delete</button>
                 </div>
             </div>
         </Wrapper>
